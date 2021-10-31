@@ -1,0 +1,107 @@
+h1
+{
+    /*width: cal(90% 30px);
+    color: white;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 40px;
+    border: 10px 10px 10px 10px;
+    border-color: cyan;
+    background: lightpink;
+    padding-left: 10%;
+    text-align: center;*/
+    padding: 20px;
+    text-align: center;
+    
+    /*background-image: url("img/T_bg_s_9.jpg");*/
+
+
+
+}
+
+#Fst
+{
+
+    padding-bottom: 50px;
+    padding-top: 10px;
+    background-image: url("img/T_bg_s_9.jpg");
+    /*background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;*/
+    background-size: cover;
+}
+/*
+#Fst img
+{
+    max-width: 100%;
+    max-height: 100%;
+    /*display: block;
+    margin: auto;
+}*/
+
+.Form
+{
+    
+    /*text-align: right;*/
+    float: right;
+    margin-right: 20px;
+}
+
+nav
+{   
+    border-radius: 30px;
+    height: 60px;
+    background-image: linear-gradient(to right , #ff99dc , #9999ff);
+    /*background-color: lightpink;*/
+    overflow: hidden;
+    color: indigo;
+}
+
+article ul
+{
+    list-style: none;
+}
+
+ul
+{
+    list-style: none;
+}
+
+#art li a img
+{
+    width: 20%;
+    height: 20%;
+}
+
+
+nav ul li a:link
+{
+    color: white;
+}
+
+nav ul li a:visited
+{
+    color: white;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+nav ul li a:hover
+{
+    border-bottom: 1px solid;
+}
+
+nav ul li
+{
+    float: left;
+    line-height: 30px;
+    margin-left: 10px;
+}
+
+#footer
+{
+    text-align: center;
+}
