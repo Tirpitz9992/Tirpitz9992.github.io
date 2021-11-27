@@ -220,3 +220,13 @@ hr#hrfooter::after {
     border: 1px solid;
     margin: 3px;
 }
+#footer
+{
+    background-color: #fff;
+    padding-bottom: 10px;
+}
+main
+{
+    margin-top: 50px;
+    padding-top: 50px;
+}

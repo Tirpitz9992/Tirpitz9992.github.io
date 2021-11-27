@@ -223,12 +223,163 @@ hr#H1_wx_hr::after {
 }
 #H1_xw
 {
+    /*white-space: normal;*/
     font-size: 24px;
     text-align: left;
     text-decoration: underline;
-    display: flex 0 0 auto;
+    /*display: flex 0 0 auto;*/
+    margin: 65px 0 0 0;
+    padding: 0 0px 0 0px;
 }
 #H1_xw :a
 {
     text-decoration: underline!;
 }
+a
+{
+    text-decoration: none;
+}
+#FIND
+{
+    font-size: 16px;
+    font-display: flex;
+    box-sizing: border-box;
+    margin: 0px 30px 0px 30px;
+    padding: 0px 30px 0px 30px;
+    /*
+    padding-left: 30px;
+    padding-right: 30px;
+    */
+}
+#about
+{
+
+    margin: 20px 30px 0px 30px;
+}
+#friends
+{
+    margin: 0px 30px 0px 30px;
+}
+#HR_1
+{
+    filter: alpha(opacity=1.0,finishopacity=0,style=2);
+    width: 90%;
+    color: #ff99dc;
+    size: 10px;
+}
+
+#S1
+{
+
+    display: inline-block; vertical-align: top; width: auto; flex: 0 0 0%; align-self: flex-start; height: auto; line-height: 0; border-width: 0px; margin: 50px -7px 0px 30px; box-sizing: border-box;
+}
+#S2
+{
+    text-align: center; position: static; box-sizing: border-box;
+}
+#S3
+{
+    display: inline-block; width: 14px; height: 8px; vertical-align: top; overflow: hidden; border-style: solid; border-width: 2px 0px 0px 2px;  border-color: rgb(104, 104, 104) rgb(62, 62, 62) rgb(62, 62, 62) rgb(104, 104, 104); box-sizing: border-box;
+}
+#S4
+{
+    float:left;line-height:0;width:0;vertical-align:top;
+}
+
+
+#S5
+{
+    display: inline-block; vertical-align: bottom; width: auto; flex: 0 0 0%; height: auto; line-height: 0; align-self: flex-end; border-width: 0px; margin: 0px 0px 0px -6px; box-sizing: border-box;
+}
+#S6
+{
+    text-align: center; position: static; box-sizing: border-box;
+}
+#S7
+{
+    margin: 0 0 0 630px;
+
+    display: inline-block; width: 14px; height: 8px; vertical-align: top; overflow: hidden; border-style: solid; border-width: 0px 2px 2px 0px;  border-color: rgb(104, 104, 104); box-sizing: border-box;
+}
+#S8
+{
+    float:left;line-height:0;width:0;vertical-align:top;
+}
+
+
+
+#S9
+{
+    display: inline-block; vertical-align: middle; width: auto; min-width: 10%; max-width: 100%; flex: 0 0 auto; height: auto; align-self: center; border-bottom: 12px solid rgb(253, 234, 175); border-bottom-right-radius: 0px; box-sizing: border-box;
+}
+#S10
+{
+    margin: 0px 0% -8px; position: static; box-sizing: border-box;
+}
+#S11
+{
+    text-align: justify; line-height: 1; color: rgb(104, 104, 104); font-size: 17px; padding: 0px 10px; box-sizing: border-box;
+}
+/*
+#SPAN
+{
+    display: inline-block; vertical-align: middle; width: auto; min-width: 10%; max-width: 100%; flex: 0 0 auto; height: auto; align-self: center; border-bottom: 12px solid rgb(253, 234, 175); border-bottom-right-radius: 0px; box-sizing: border-box;
+}*/
+
+/*
+
+#S1
+{
+    display: inline-block; vertical-align: top; width: auto; min-width: 10%; max-width: 100%; flex: 0 0 auto; height: auto; align-self: flex-start; margin: 0px 20px 0px 0px; box-sizing: border-box;
+}
+
+#S2
+{
+    text-align: center; position: static; box-sizing: border-box;
+}
+
+#S3
+{
+    display: inline-block; width: 40px; height: 40px; vertical-align: top; overflow: hidden; background-color: rgb(241, 213, 213); border-width: 0px; border-radius: 65px; border-style: none; border-color: rgb(62, 62, 62); box-sizing: border-box;
+}
+#S4
+{
+    display: flex; flex-flow: row nowrap; justify-content: center; margin: 7px 0% 0px; position: static; box-sizing: border-box;
+}
+#S5
+{
+    display: inline-block; vertical-align: top; width: 20px; flex: 0 0 auto; align-self: flex-start; height: auto; line-height: 0; border-width: 0px;  border-style: none; border-color: rgb(62, 62, 62); overflow: hidden; box-sizing: border-box;
+}
+#S6
+{
+    position: static; transform: rotateZ(55deg); -webkit-transform: rotateZ(55deg); -moz-transform: rotateZ(55deg); -o-transform: rotateZ(55deg); box-sizing: border-box;
+}
+#S7
+{
+    text-align: right; justify-content: flex-end; margin: 0px 0% 18px; transform: translate3d(13px, 0px, 0px); -webkit-transform: translate3d(13px, 0px, 0px); -moz-transform: translate3d(13px, 0px, 0px); -o-transform: translate3d(13px, 0px, 0px); position: static; box-sizing: border-box;
+}
+#S8
+{
+    display: inline-block; width: 20px; height: 8px; vertical-align: top; overflow: hidden; background-color: rgb(255, 255, 255); border-radius: 50%; border-width: 0px; border-style: none; border-color: rgb(62, 62, 62); box-sizing: border-box;
+}
+#S9
+{
+    display: inline-block; width: 20px; height: 8px; vertical-align: top; overflow: hidden; background-color: rgb(255, 255, 255); border-radius: 50%; border-width: 0px; border-style: none; border-color: rgb(62, 62, 62); box-sizing: border-box;
+}
+#S11
+{
+    display: inline-block; vertical-align: top; width: 20px; flex: 0 0 auto; align-self: flex-start; height: auto; line-height: 0; border-width: 0px;  border-style: none; border-color: rgb(62, 62, 62); overflow: hidden; box-sizing: border-box;
+}
+#S12
+{
+    position: static; transform: rotateZ(305deg); -webkit-transform: rotateZ(305deg); -moz-transform: rotateZ(305deg); -o-transform: rotateZ(305deg); box-sizing: border-box;
+}
+#S13
+{
+    text-align: left; justify-content: flex-start; margin: 0px 0% 18px; transform: translate3d(-13px, 0px, 0px); -webkit-transform: translate3d(-13px, 0px, 0px); -moz-transform: translate3d(-13px, 0px, 0px); -o-transform: translate3d(-13px, 0px, 0px); position: static; box-sizing: border-box;
+}
+#S14
+{
+    display: inline-block; width: 20px; height: 8px; vertical-align: top; overflow: hidden; background-color: rgb(255, 255, 255); border-radius: 50%; border-width: 0px; border-style: none; border-color: rgb(62, 62, 62); box-sizing: border-box;
+}
+*/

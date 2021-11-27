@@ -202,7 +202,8 @@ nav ul li
     text-align: center;
 }
 
-hr#hrfooter {
+hr#hrfooter 
+{
     border: 0;
     color: #9999ff;
     background: linear-gradient(currentColor, currentColor) no-repeat center;
@@ -211,7 +212,8 @@ hr#hrfooter {
     justify-content: space-between;
 }
 hr#hrfooter::before,
-hr#hrfooter::after {
+hr#hrfooter::after 
+{
     content: '';
     display: block;
     width: .75em; height: .75em;
@@ -220,3 +222,29 @@ hr#hrfooter::after {
     border: 1px solid;
     margin: 3px;
 }
+
+/*
+#Welcome
+{
+    color: rgba(0,0,0,0);
+    background-image: linear-gradient(60deg,transparent -10% , #ff99dc , #fff, transparent);
+    animation: loop 3s ease-in-out infinite;
+    background-clip: text;
+    background-size: 200% 100%;
+    @keyframes loop
+    {
+        0%
+        {
+            background-position: 200% 0%;
+        }
+        100%
+        {
+            background-position: 0% 0%;
+        }
+    }
+}
+*/
+
+
+
+
