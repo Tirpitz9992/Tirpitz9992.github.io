@@ -1,25 +1,4 @@
-h1
-{
-    /*width: cal(90% 30px);
-    color: white;
-    font-size: 50px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 40px;
-    border: 10px 10px 10px 10px;
-    border-color: cyan;
-    background: lightpink;
-    padding-left: 10%;
-    text-align: center;*/
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-    font-size: 100px;
-    
-    /*background-image: url("img/T_bg_s_9.jpg");*/
 
-
-
-}
 
 #aside
 {
@@ -230,3 +209,65 @@ main
     margin-top: 50px;
     padding-top: 50px;
 }
+
+
+#circle
+{
+    justify-content: flex-start;
+    vertical-align: top;
+    float: left;
+    overflow: hidden;
+
+}
+
+
+#arc_1
+{
+    /*margin: 5px 5px 0px -30px;
+    width: auto;
+    vertical-align: top;
+    display: inline-block;*/
+    font-size: 30px;
+    color: #666699;
+    white-space: normal;
+    text-align: justify;
+    margin: 2px 2px 0 10px;
+}
+#date_1
+{
+    /*margin: 40px 0px 0 -60px;*/
+    color: #f99ccf;
+    margin: -6px 2px 0 10px;
+    font-size: 12px;
+    width: auto;
+    text-align: justify;
+}
+#title
+{
+    display: inline-block;
+    vertical-align: top;
+    width: auto; 
+    min-width: 10%; 
+    max-width: 100%; height: auto; 
+    margin: 0px 0px 0px -40px; 
+    box-sizing: border-box;
+}
+
+#content
+{
+    margin: 0 70px 0 70px;
+}
+
+h1
+{
+    font-size: 36px;
+}
+p
+{
+    font-size: 20px;
+}
+p a:link , p a:visited
+{
+    color: #d11aff;
+}
+

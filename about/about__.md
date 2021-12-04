@@ -8,5 +8,5 @@ you can find me on
 [mail](mailto://tirpitz9992@gmail.com)
 [github](https://github.com/Tirpitz9992)
 
-# Friends
+# Friend
 
