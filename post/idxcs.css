@@ -28,11 +28,15 @@ hr#arthr
     margin-right: 50px;
     background-image: linear-gradient(to right, #ffb3ff , #9999ff);
 }
-
+body
+{
+    margin: 0px;
+    padding: 0px;
+}
 
 #Fst
 {
-
+    
     padding-bottom: 50px;
     padding-top: 10px;
     background-image: url("../img/T_bg_s_9.jpg");
