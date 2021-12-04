@@ -230,7 +230,7 @@ hr#H1_wx_hr::after {
     /*white-space: normal;*/
     font-size: 24px;
     text-align: left;
-    text-decoration: underline;
+    /*text-decoration: underline;
     /*display: flex 0 0 auto;*/
     margin: 65px 0 0 0;
     padding: 0 0px 0 0px;
@@ -262,7 +262,7 @@ a
 }
 #friends
 {
-    margin: 0px 30px 0px 30px;
+    margin: 0px 60px 0px 30px;
 }
 #HR_1
 {
