@@ -3,7 +3,7 @@ document.getElementById('content').innerHTML =
 
 ------
 
-# Mechanics of a particle
+## Mechanics of a particle
 
 let r be the radius vector of a particle frome some given origin and v its vector velocity:
 
@@ -50,10 +50,10 @@ $$
 v=\\frac{dr}{dt}=\\dot{x}i+\\dot{y}j+\\dot{z}k
 $$
 $$
-\\begin{matrix}
-r=ri \\\\
+r=ri 
+$$
+$$
 v=\\frac{r}{t}
-\\end{matrix}
 $$
 
 
