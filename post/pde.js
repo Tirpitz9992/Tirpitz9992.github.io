@@ -1,5 +1,7 @@
 
 
+
+
 document.getElementById('content').innerHTML =
 marked.parse(`# Partial differential equation
 
@@ -137,5 +139,156 @@ $$\\iint\\limits_{\\Omega} \\frac{\\partial Q}{\\partial x} + \\frac{\\partial P
 becuase $dx = -cos(n , y)dS , dy=cos(n , x)dS$
 
 $$\\iint\\limits_{\\Omega} \\frac{\\partial Q}{\\partial x} + \\frac{\\partial P}{\\partial y} d\\sigma = \\oint\\limits_{\\partial \\Omega}Pcos(n,x) + Qcos(n,y)dS$$
+
+$\\overline{\\Omega}$ -> $\\Omega$的闭包 $\\Omega \\cap \\partial \\Omega$.
+
+$C(\\overline{\\Omega})$在$\\overline{\\Omega}$上的所有连续函数集合
+
+$C^2(\\Omega)$在$\\Omega$上直到二阶导数连续的函数集合
+
+### Gauss's theorem(Divergence theorem)
+
+let $P,Q,R in C^1(V),S=\\partial V$, then
+
+$$\\iiint\\limits_{V}(\\frac{\\partial P}{\\partial x}  + \\frac{\\partial Q}{\\partial y} + \\frac{\\partial R}{\\partial z})dxdydz = \\oiint\\limits_{\\partial V}Pdydz+Qdzdx+Rdxdy$$
+
+vector variant
+
+$$\\iiint\\limits_{V} divAdv = \\oiint\\limits_{\\partial V} A\\cdot dS = \\oiint\\limits_{\\partial V} A\\cdot ndS$$
+> $n=(cos(n,x),cos(n,y),cos(n,z))$
+
+### Gauss' theorem variants
+
+1. let $A=\\nabla u$
+
+$$\\iiint\\limits_{V} \\nabla\\cdot \\vec{A}dV=\\iiint\\limits_{V}\\nabla\\cdot\\nabla u dV = \\iiint\\limits_{V}\\triangle u dv = \\oiint\\limits_{\\partial V} \\nabla u \\cdot \\vec{n}dS$$
+
+$$\\iiint\\limits_{V}\\triangle udV = \\oiint\\limits_{\\partial V}\\nabla u \\cdot dS = \\oiint\\limits_{\\partial V}\\nabla u \\cdot n dS = \\oiint\\limits_{\\partial S} \\frac{\\partial u}{\\partial n} dS$$
+
+2. let $A=u\\nabla v$
+>Green's identities 1th.
+$$\\iiint\\limits_{V} u\\triangle v dV = \\oiint\\limits_{\\partial V} u\\frac{\\partial v}{\\partial n}dS - \\iiint\\limits_{V}\\nabla u \\cdot \\nabla v dV$$
+$$\\iiint\\limits_{V}\\nabla\\cdot(u\\nabla v) = \\iiint\\limits_{V}\\nabla\\cdot\\nabla V+u\\triangle v = \\oiint\\limits_{\\partial V} u\\frac{\\partial v}{\\partial n} dS$$
+The same , let $A=v\\nabla u$ available
+$$\\iiint\\limits_V v\\triangle udV=\\oiint\\limits_{\\partial V} v\\frac{\\partial u}{\\partial n}dS - \\iiint\\limits_V\\nabla u \\cdot \\nabla v dV$$
+Subtract to get
+
+> Green's identities 2th.
+$$\\iiint\\limits_V v\\triangle u - u\\triangle v dV = \\oiint\\limits_{\\partial V} v\\frac{\\partial u}{\\partial n} - u\\frac{\\partial v}{\\partial n}dS$$
+
+## some inequalities
+
+Cauchy inequality
+
+$$ab \\le \\frac{a^2}{2} + \\frac{b^2}{2}$$
+
+Cauchy inequality
+
+$$ab \\le \\epsilon a^2 + \\frac{b^2}{4\\epsilon}$$
+
+Holder inequality
+
+set $1\\le q , q\\le \\infty, \\frac{1}{p} + \\frac{1}{q} = 1$ , then if $u \\in L^p(\\Omega) , v\\in L^q(\\Omega)$
+
+$$\\int\\limits_{\\Omega} |uv|dx \\le u_{L^p(\\Omega)} v_{L^q(\\Omega)}$$
+
+Cauchy-Schwarz inequality
+
+$$|x\\cdot y| \\le |x||y| , x , y \\in R^n$$
+
+### linear Functional Analysis 线性泛函分析
+
+Let X denote a real linear space 
+
+define norm(范数)
+
+if a map $$\\left |  \\right | : X -> [0,\\infty)$$ meet the following conditions
+
+$$\\left | u + v \\right | \\le \\left | u \\right | + \\left | v  \\right | , \\forall v, u \\in X$$
+
+$$\\left | \\lambda u \\right | = |\\lambda|\\left | u  \\right | , \\forall u \\in X , \\lambda \\in R$$
+
+$$\\left | u \\right | = 0$$, only u = 0 
+
+then X is norm
+
+we assume that X is Normed vector spaces
+
+define 
+
+if the sequence $\\{ [u_k]\\}_{k=1}^{\\infty}$ in X , meet
+
+$$\\lim\\limits_{k->\\infty} \\left | u_k - u \\right | = 0$$
+
+Then the sequence converges to $u\\in X$ , note as  
+$$u_k -> u$$
+
+define 
+
+## conservation laws
+
+### Momentum conservation and string vibration equation 
+
+#### Physical model
+
+两端固定 拉紧 均匀柔软 的长度为l的细弦 ， 在垂直与弦方向的外力作用下在平衡位置附近作微小的横震动，求弦上个点的运动规律
+
+#### Ideal hypothesis
+
+两端固定 Boundart conditions
+
+拉紧 The length of the string = the length occupied by the x axis $u(x , y ) , x \\in [0,l]$
+
+均匀柔软 line density $\\rho = const$，形变时不抵抗弯曲，各质点间的张力方向与弦的切线方向一致
+
+细弦 横截面小，与长度相比可忽略
+
+微小的横震动  震动小，震动过程中弦的长度没有变化
+
+![0](../img/pde/string.png)
+
+取弦上任意一段 x1 到 x2 作为研究对象，分析其受力情况，
+设弦上 x 点处 t 时刻受到弦的张力为 T(x, t)，记
+T(x, t) = |T(x, t)|
+
+proof $T(x , t) \\equiv const$
+
+#### T(x,t) = T(x)
+
+proof the length of string does not change over time 
+
+Hooke's law $$F=-kx$$
+
+$$F(t_2) - F(t_1) = -k(S(t_2) - S(t_1))$$
+
+then we kown the tension does not change over time
+
+$$S(t) = \\int_{x_1}^{x_2} \\sqrt{1+(\\frac{\\partial u}{\\partial x})^2 }dx$$
+(曲线长度积分公式)
+
+due to $\\frac{\\partial u}{\\partial x}$ minimal , $o(x_2 - x_1)$
+
+$$S(t) \\approx x_2 - x_1$$
+
+#### T(x) == const
+
+due to the string has no displacement in the x direction , the resultant force in this direction is zero.
+
+$$\\textrm{in } x_1: T_x(x_1)=-T(x_1)cos(\\pi - \\alpha_1) = T(x_1)cos\\alpha_1$$
+
+$$\\textrm{in }x_2: T_x(x_2)=T(x_2)cos\\alpha_2$$
+
+resultant force: $T(x_1)cos\\alpha_1 + T(x_2)cos\\alpha_2 = 0$
+
+$$cos(\\pi - \\alpha_1) = \\lim\\limits_{\\Delta x -> 0} \\frac{\\Delta x}{\\sqrt{\\Delta x^2 + \\Delta u^2}}$$
+$$=\\frac{1}{\\sqrt{1+[\\frac{\\partial u(x,t)}{\\partial x}]^2}}\\approx 1 => \\alpha_1 \\approx \\pi$$
+
+similar,$cos\\alpha_1 \\approx -1 . cos\\alpha_2 \\approx 1$ => $T(x_1) = T(x_2) \\equiv const$
+
+![](../img/pde/dir.png)
+
+
+
+
 
 `);

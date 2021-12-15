@@ -3,7 +3,20 @@ document.getElementById('content').innerHTML =
 
 ------
 
+
+
+## virtual work 
+
+In analytical mechanics , the force applied to an object , due to a given virtual disaplacement , the mechanical work done is called virtual work, note as  
+$$\\delta W = F \\cdot \\delta r$$
+
+
+
+
+
+
 ## Mechanics of a particle
+
 
 let r be the radius vector of a particle frome some given origin and v its vector velocity:
 
@@ -56,5 +69,7 @@ $$
 v=\\frac{r}{t}
 $$
 
+
+evolve
 
 `);
