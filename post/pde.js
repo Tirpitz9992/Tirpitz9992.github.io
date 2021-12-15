@@ -25,7 +25,7 @@ nonlinear:
 齐次方程-只包含u及其导数的是齐次方程
 
 ------------
-三类基本的二阶PDE
+## 三类基本的二阶PDE
 1.双曲型方程： 波动方程
 $$\\frac{\\partial^2u}{\\partial t^2}-a^2\\bigtriangleup u=f(t,x)$$
 2.抛物型方程： 热传导方程
@@ -41,13 +41,13 @@ $$\\bigtriangleup = \\sum_{i=1}^{m} \\frac{\\partial ^2}{\\partial x_i^2}$$
 
 ------------
 
-Gradient
+## Gradient
 
 $$gradu=(\\frac{\\partial u}{\\partial x}, \\frac{\\partial u}{\\partial y}, \\frac{\\partial u}{\\partial z})$$
 
 u -> 必须为数量场 $u(x ,y , z)$, $u(x ,y , z , t)$
 
-Gradient field
+### Gradient field
 
 $$\\nabla=(\\frac{\\partial }{\\partial x}, \\frac{\\partial }{\\partial y}, \\frac{\\partial   }{\\partial z})$$
 
@@ -74,14 +74,68 @@ $$\\nabla=f^{'}(u) \\nabla u$$
 
 ---------
 
-Divergence 散度
+## Divergence 散度
 
 let$$A(x, y , z) = (P(x , y, z) , Q(x, y, z) , R(x, y, z))$$ is vector function on the spatial region V, define
 $$D(x , y , z) = \\frac{\\partial P}{\\partial x}, \\frac{\\partial Q}{\\partial y}, \\frac{\\partial R}{\\partial z}$$
 is defined as the Divergence of A in (x, y, z)
 
-令$n = (cos\\alpha , cos\\beta , cos\\gamma)$为曲面的单位法向量，则$dS=ndS$称为面积元素向量
-Gauss formula 可写作如下向量形式
+令$n = (cos\\alpha , cos\\beta , cos\\gamma)$为曲面的单位法向量，则$d\\vec{S}=ndS$称为面积元素向量
+Gauss law 可写作如下向量形式
+
+
 $$\\iiint\\limits_{V} divAdV=\\oiint_S A\\cdot dS$$
+
+
+
+在V中任取一点$M_0$，对上式左边使用中值定理
+$$\\iiint\\limits_{v} divAdV = divA(M^{*}\\cdot \\bigtriangleup V = \\oiint_{S} A\\cdot dS)$$
+
+$$divA(M_0)=\\lim_{V \\to M_0} \\frac{\\oiint_{S}A\\cdot dS}{\\bigtriangleup V}$$
+
+![不同的向量场的散度。向量场自点(x,y)的散度等于它在这个点上的x分量关于x的偏导数与y分量关于y的偏导数的和： $\\nabla \\cdot (V(x,y))=\\frac{\\partial V_x(x,y)}{\\partial x}+\\frac{V_y}{}$](../img/pde/D.png)
+
+### Divergence Basic Nature
+
+1. if u , v is scalar function
+
+$$\\nabla \\cdot (u + v) = \\nabla \\cdot u + \\nabla \\cdot v$$
+
+2. if $\\varphi$ is scalar function , F is vector function , then 
+$$\\nabla \\cdot (\\varphi F) = \\varphi \\nabla \\cdot F + F \\cdot \\nabla \\varphi$$
+
+3. if $\\varphi=\\varphi(x , y , z)$is a scalar function
+$$\\nabla\\cdot\\nabla\\varphi=\\frac{\\partial^{2} \\varphi}{\\partial x}+ \\frac{\\partial^{2} \\varphi}{\\partial y}+\\frac{\\partial^2 \\varphi}{\\partial z} = \\nabla \\varphi$$
+
+
+----------- 
+
+## Curl field
+
+let $A(x , y , z) = (P(x , y, z) , Q(x, y, z) , R(x, y, z))$ is vector function in $V^3$, for evey point (x , y , z) in $V^3$, define function
+
+$$F(x , y , z) = (\\frac{\\partial R}{\\partial y} - \\frac{\\partial Q}{\\partial z} , \\frac{\\partial P}{\\partial z} - \\frac{\\partial R}{\\partial x} , \\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y}) = $$ $$ \\begin{vmatrix}
+&i  &j &k \\\\
+&\\frac{\\partial}{\\partial x}  &\\frac{\\partial}{\\partial y}  &\\frac{\\partial}{\\partial z} \\\\
+&P  &Q  &R
+\\end{vmatrix}$$
+
+This is Curl of vector in (x , y , z) , note as
+
+$$F(x , y , z) = curlA$$
+
+the vector version
+
+$$curlA=\\nabla \\times A$$
+
+![set](../img/12_13.png)
+
+$P(x,y),Q(x,y) \\in C(\\overline{\\Omega}) \\bigcup C^2(\\Omega)$
+
+$$\\iint\\limits_{\\Omega} \\frac{\\partial Q}{\\partial x} + \\frac{\\partial P}{\\partial y} d\\sigma = \\oint\\limits_{\\partial \\Omega}Pdx + QdxdS$$
+
+becuase $dx = -cos(n , y)dS , dy=cos(n , x)dS$
+
+$$\\iint\\limits_{\\Omega} \\frac{\\partial Q}{\\partial x} + \\frac{\\partial P}{\\partial y} d\\sigma = \\oint\\limits_{\\partial \\Omega}Pcos(n,x) + Qcos(n,y)dS$$
 
 `);
