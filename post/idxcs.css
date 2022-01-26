@@ -262,6 +262,7 @@ main
     margin: 0 70px 0 70px;
 }
 
+
 h1
 {
     font-size: 36px;
@@ -273,5 +274,9 @@ p
 p a:link , p a:visited
 {
     color: #d11aff;
+}
+#Cont
+{
+    padding: 0 50px 0 50px;
 }
 

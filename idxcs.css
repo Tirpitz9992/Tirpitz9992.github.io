@@ -272,6 +272,11 @@ hr#hrfooter::after
     box-sizing: border-box;
 }
 
+
+#Cont
+{
+    padding: 10px 50px 10px 50px;
+}
 /*
 display: inline-block; vertical-align: top; width: auto; min-width: 10%; max-width: 100%; height: auto; margin: 0px 0px 0px -40px; box-sizing: border-box;
 display: inline-block; width: 73px; height: 73px; vertical-align: top; overflow: hidden; background-color: rgb(244, 244, 244); border-width: 0px; border-radius: 317px; border-style: none; border-color: rgb(62, 62, 62); box-sizing: border-box;
