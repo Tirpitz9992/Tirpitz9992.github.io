@@ -1,25 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-interface BlogPost {
-  id: number;
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-}
+import { getAllBlogs } from '../data/blogs';
 
 const BlogListPage: React.FC = () => {
-  // 只保留一个测试博客
-  const blogPosts: BlogPost[] = [
-    {
-      id: 1,
-      title: "测试博客：LaTeX渲染示例",
-      excerpt: "这是一个测试博客文章，用于演示LaTeX数学公式的渲染效果。包含行内公式 $E=mc^2$ 和块级公式。",
-      date: "2024-07-18",
-      readTime: "3分钟阅读"
-    }
-  ];
+  const blogPosts = getAllBlogs();
 
   return (
     <div className="container">
@@ -35,6 +19,11 @@ const BlogListPage: React.FC = () => {
               <div className="blog-card-meta">
                 <span>{post.date}</span>
                 <span>{post.readTime}</span>
+              </div>
+              <div className="blog-card-tags">
+                {post.tags.map((tag) => (
+                  <span key={tag} className="blog-tag">{tag}</span>
+                ))}
               </div>
             </div>
           </article>

@@ -1,133 +1,117 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import katex from 'katex';
 import 'katex/dist/katex.min.css';
+import { getBlogById } from '../data/blogs';
+import { BlogService } from '../services/blogService';
 
 const BlogDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  const [content, setContent] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const blog = getBlogById(id || '');
 
   useEffect(() => {
+    const loadBlogContent = async () => {
+      if (!blog) {
+        setError('博客未找到');
+        setLoading(false);
+        return;
+      }
+
+      try {
+        setLoading(true);
+        const markdownContent = await BlogService.loadBlogContent(blog.id);
+        const htmlContent = BlogService.markdownToHtml(markdownContent);
+        setContent(htmlContent);
+        setError(null);
+      } catch (err) {
+        setError('加载博客内容失败');
+        console.error('加载博客内容时出错:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadBlogContent();
+  }, [id, blog]);
+
+  useEffect(() => {
+    if (!content) return;
+
     // 渲染LaTeX公式
     const renderMath = () => {
       const elements = document.querySelectorAll('.blog-detail-content');
       elements.forEach(element => {
-        // 渲染行内公式
-        const inlineMath = element.querySelectorAll('script[type="math/tex"]');
-        inlineMath.forEach(script => {
-          const html = katex.renderToString(script.textContent || '', { displayMode: false });
-          const span = document.createElement('span');
-          span.innerHTML = html;
-          script.parentNode?.replaceChild(span, script);
-        });
-
-        // 渲染块级公式
-        const displayMath = element.querySelectorAll('script[type="math/tex; mode=display"]');
-        displayMath.forEach(script => {
-          const html = katex.renderToString(script.textContent || '', { displayMode: true });
-          const div = document.createElement('div');
-          div.innerHTML = html;
-          div.style.textAlign = 'center';
-          div.style.margin = '1em 0';
-          script.parentNode?.replaceChild(div, script);
-        });
-
         // 渲染$...$格式的行内公式
-        const content = element.innerHTML;
-        const processedContent = content
-          .replace(/\$\$(.*?)\$\$/gs, (match, formula) => {
-            try {
-              return katex.renderToString(formula, { displayMode: true });
-            } catch (e) {
-              return match;
+        const inlineFormulas = element.querySelectorAll('p, li, span, h1, h2, h3, h4, h5, h6');
+        inlineFormulas.forEach(node => {
+          if (node.textContent) {
+            const processed = node.innerHTML
+              .replace(/\$\$(.*?)\$\$/gs, (match, formula) => {
+                try {
+                  return katex.renderToString(formula, { displayMode: true });
+                } catch (e) {
+                  console.warn('LaTeX渲染错误:', e);
+                  return match;
+                }
+              })
+              .replace(/\$(.*?)\$/g, (match, formula) => {
+                try {
+                  return katex.renderToString(formula, { displayMode: false });
+                } catch (e) {
+                  console.warn('LaTeX渲染错误:', e);
+                  return match;
+                }
+              });
+            if (processed !== node.innerHTML) {
+              node.innerHTML = processed;
             }
-          })
-          .replace(/\$(.*?)\$/g, (match, formula) => {
-            try {
-              return katex.renderToString(formula, { displayMode: false });
-            } catch (e) {
-              return match;
-            }
-          });
-        
-        if (processedContent !== content) {
-          element.innerHTML = processedContent;
-        }
+          }
+        });
       });
     };
 
-    renderMath();
-  }, []);
-
-  // 测试博客内容，支持LaTeX
-  const blogContent = {
-    1: {
-      title: "测试博客：LaTeX渲染示例",
-      date: "2024-07-18",
-      content: `
-# 测试博客：LaTeX渲染示例
-
-欢迎来到这个测试博客！这篇文章将演示如何在博客中渲染LaTeX数学公式。
-
-## 行内公式
-
-这是一个行内公式的示例：$E=mc^2$，这是爱因斯坦著名的质能方程。
-
-## 块级公式
-
-这是一个块级公式的示例：
-
-$$
-\\int_{-\\infty}^{\\infty} e^{-x^2} dx = \\sqrt{\\pi}
-$$
-
-## 矩阵示例
-
-我们可以使用LaTeX来渲染矩阵：
-
-$$
-\\begin{pmatrix}
-1 & 2 & 3 \\\\
-4 & 5 & 6 \\\\
-7 & 8 & 9
-\\end{pmatrix}
-$$
-
-## 希腊字母和符号
-
-希腊字母在数学中经常使用：$\\alpha, \\beta, \\gamma, \\delta, \\epsilon$ 等等。
-
-## 极限和求和
-
-极限和求和的表示：
-
-$$
-\\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\frac{1}{i^2} = \\frac{\\pi^2}{6}
-$$
-
-## 微积分
-
-导数和积分的表示：
-
-$$
-\\frac{d}{dx} \\sin(x) = \\cos(x)
-$$
-
-$$
-\\int_0^1 x^2 dx = \\frac{1}{3}
-$$
-
----
-
-*这个页面已经集成了KaTeX，可以正确渲染LaTeX数学公式。*
-      `
-    }
-  };
-
-  const blogId = parseInt(id || '1');
-  const blog = blogId === 1 ? blogContent[1] : undefined;
+    // 延迟渲染以确保DOM已更新
+    const timeoutId = setTimeout(renderMath, 100);
+    return () => clearTimeout(timeoutId);
+  }, [content]);
 
   if (!blog) {
-    return <div className="container">博客未找到</div>;
+    return (
+      <div className="container">
+        <div className="error-message">
+          <h1>博客未找到</h1>
+          <p>抱歉，您访问的博客不存在。</p>
+          <a href="/blog">返回博客列表</a>
+        </div>
+      </div>
+    );
+  }
+
+  if (loading) {
+    return (
+      <div className="container">
+        <div className="loading">
+          <div className="loading-spinner"></div>
+          <p>正在加载博客内容...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container">
+        <div className="error-message">
+          <h1>加载失败</h1>
+          <p>{error}</p>
+          <button onClick={() => window.location.reload()}>重试</button>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -137,11 +121,17 @@ $$
           <h1 className="blog-detail-title">{blog.title}</h1>
           <div className="blog-detail-meta">
             <span>发布日期：{blog.date}</span>
+            <span>阅读时间：{blog.readTime}</span>
+          </div>
+          <div className="blog-detail-tags">
+            {blog.tags.map((tag) => (
+              <span key={tag} className="blog-tag">{tag}</span>
+            ))}
           </div>
         </header>
         <div 
           className="blog-detail-content"
-          dangerouslySetInnerHTML={{ __html: blog.content }}
+          dangerouslySetInnerHTML={{ __html: content }}
         />
       </article>
     </div>

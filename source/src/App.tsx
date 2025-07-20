@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import BlogListPage from './pages/BlogListPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import './App.css';
+import './styles/blog.css';
 
 function App() {
   return (

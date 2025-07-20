@@ -1,0 +1,232 @@
+/* 博客列表样式 */
+.blog-list {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.blog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.blog-card-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.blog-card-title a {
+  color: #333;
+  text-decoration: none;
+}
+
+.blog-card-title a:hover {
+  color: #007bff;
+}
+
+.blog-card-excerpt {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.blog-card-meta {
+  display: flex;
+  gap: 1rem;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.blog-card-tags {
+  margin-top: 0.5rem;
+}
+
+.blog-tag {
+  display: inline-block;
+  background: #f0f0f0;
+  color: #333;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+/* 博客详情样式 */
+.blog-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.blog-detail-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.blog-detail-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.blog-detail-meta {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.blog-detail-meta span {
+  margin: 0 0.5rem;
+}
+
+.blog-detail-tags {
+  margin-top: 1rem;
+}
+
+.blog-detail-content {
+  line-height: 1.8;
+  color: #333;
+}
+
+.blog-detail-content h1,
+.blog-detail-content h2,
+.blog-detail-content h3,
+.blog-detail-content h4,
+.blog-detail-content h5,
+.blog-detail-content h6 {
+  margin: 2rem 0 1rem 0;
+  color: #222;
+}
+
+.blog-detail-content h1 {
+  font-size: 2rem;
+}
+
+.blog-detail-content h2 {
+  font-size: 1.75rem;
+}
+
+.blog-detail-content h3 {
+  font-size: 1.5rem;
+}
+
+.blog-detail-content p {
+  margin-bottom: 1rem;
+}
+
+.blog-detail-content code {
+  background: #f4f4f4;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.blog-detail-content pre {
+  background: #f8f8f8;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.blog-detail-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.blog-detail-content ul,
+.blog-detail-content ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.blog-detail-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-detail-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.blog-detail-content a:hover {
+  text-decoration: underline;
+}
+
+/* 加载和错误状态 */
+.loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  text-align: center;
+  padding: 3rem;
+}
+
+.error-message h1 {
+  color: #dc3545;
+  margin-bottom: 1rem;
+}
+
+.error-message p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.error-message button,
+.error-message a {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.error-message button:hover,
+.error-message a:hover {
+  background: #0056b3;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .blog-detail {
+    padding: 1rem;
+  }
+
+  .blog-detail-title {
+    font-size: 2rem;
+  }
+
+  .blog-card {
+    padding: 1rem;
+  }
+}
