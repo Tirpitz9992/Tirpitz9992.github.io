@@ -1,4 +1,4 @@
-import { BlogPost } from '../data/blogs';
+// import { BlogPost } from '../data/blogs';
 
 export class BlogService {
   // 加载Markdown文件内容
