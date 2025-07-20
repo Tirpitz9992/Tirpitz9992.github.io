@@ -18,14 +18,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "3分钟阅读",
     tags: ["LaTeX", "数学公式", "测试"]
   },
-  {
-    id: "getting-started-with-react",
-    title: "React入门指南",
-    date: "2024-07-19",
-    excerpt: "学习React基础知识，包括组件、状态管理和生命周期。适合初学者的完整教程。",
-    readTime: "5分钟阅读",
-    tags: ["React", "JavaScript", "前端开发"]
-  }
 ];
 
 // 获取所有博客文章
