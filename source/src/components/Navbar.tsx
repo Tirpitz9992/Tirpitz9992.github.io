@@ -12,6 +12,8 @@ const Navbar: React.FC = () => {
           <ul className="navbar-links">
             <li><Link to="/">首页</Link></li>
             <li><Link to="/blog">博客</Link></li>
+            <li><Link to="/about">关于</Link></li>
+            <li><Link to="/friends">友链</Link></li>
           </ul>
         </div>
       </div>

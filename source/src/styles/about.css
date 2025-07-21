@@ -1,0 +1,127 @@
+/* 关于页面样式 */
+.about-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.about-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.about-content {
+  line-height: 1.8;
+}
+
+.about-intro {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.about-intro h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.about-skills {
+  margin-bottom: 2rem;
+}
+
+.about-skills h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-category {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h4 {
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-category li {
+  padding: 0.25rem 0;
+  color: #666;
+}
+
+.about-contact {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.about-contact h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.about-quote {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-quote blockquote {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.about-quote footer {
+  color: #666;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

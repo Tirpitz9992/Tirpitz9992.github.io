@@ -1,0 +1,169 @@
+/* 友链页面样式 */
+.friends-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.friends-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.friends-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.friends-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.friends-content {
+  line-height: 1.8;
+}
+
+.friends-intro {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.friends-intro a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.friends-intro a:hover {
+  text-decoration: underline;
+}
+
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.friend-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.friend-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.friend-avatar {
+  flex-shrink: 0;
+}
+
+.friend-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.friend-avatar-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.friend-info {
+  flex: 1;
+}
+
+.friend-name {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.friend-name a {
+  color: #333;
+  text-decoration: none;
+}
+
+.friend-name a:hover {
+  color: #007bff;
+}
+
+.friend-description {
+  color: #666;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.friend-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.friend-tag {
+  background: #e9ecef;
+  color: #495057;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+.friends-exchange {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.friends-exchange h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.exchange-info ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.exchange-info li {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.exchange-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.exchange-info a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .friends-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .friend-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}

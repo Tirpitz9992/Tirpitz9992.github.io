@@ -2,7 +2,48 @@
   "hash": "347b9eab",
   "configHash": "9bd7c2fa",
   "lockfileHash": "293f6f0e",
-  "browserHash": "2069b7d8",
-  "optimized": {},
-  "chunks": {}
+  "browserHash": "b236a31a",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "b64ab366",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "b62096ca",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "e551f120",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "c3ddefdc",
+      "needsInterop": false
+    },
+    "katex": {
+      "src": "../../node_modules/katex/dist/katex.mjs",
+      "file": "katex.js",
+      "fileHash": "ac64df89",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-XQIPT53K": {
+      "file": "chunk-XQIPT53K.js"
+    },
+    "chunk-KS2M7ZJI": {
+      "file": "chunk-KS2M7ZJI.js"
+    },
+    "chunk-5WRI5ZAA": {
+      "file": "chunk-5WRI5ZAA.js"
+    }
+  }
 }
